@@ -1,0 +1,64 @@
+  <!-- navigation bar  -->
+    <div class="nav-container">
+        <button type="button" id="nav-home-bt" >
+              <a href="/" style="color:black" ><i style="font-size: 115%;color: black;"></i>Home</a>
+        </button>
+        <!-- class="fa fa-home" -->
+    </div>
+    <%- include('link_poster_slide.ejs')%>
+<!-- trending design container -->
+<div class="trending_design_parent" >
+    <!-- trending design title conatiner -->
+   <div id="T-D-title-C" >
+       <div id="T-D-left-box" >
+       </div>
+       <div id="T-D-middle-box" >
+           <h2>Trending Design</h2>  
+       </div>
+       <div id="T-d-right-box">
+       </div>
+   </div>
+   <!-- trending design container -->
+   <div id="trending-design-container">
+       <!-- trending design inner boxes container  -->
+       <div class="T-D-inner-B-C" >
+           <!-- trending design inner boxes  -->
+           <% if(Trending != null) { %>
+               <% Trending.slice(0,6).forEach(function(item){ %>
+                   <div  class="TDBB T-D-inner-boxes">
+                       <% if(item.itemimg == null) {%>
+                           <img  src="\static\blouseimages\images.jpg" alt="">
+                       <% } else {%>
+                           <img onclick="copy_img_url(this)" src="data:image/<%=item.itemimg.contentType%>;base64,<%=item.itemimg.data.toString('base64')%>" alt="">
+                       <% } %>
+                        <p style="text-align: center;font-weight:800;"><%= item.itemtitle %></p>
+                   </div>
+               <% }) %>
+           <% } %>  
+       </div>
+   </div>
+</div>
+   <!-- more designs container  -->
+   <div class="more-designs-container" >
+       <!-- more designs inner containers  -->
+       <% if(More != null) { %>
+           <% More.slice(0,30).forEach(function(item){ %>
+               <div  class="M-D-inner-containers" >
+                   <img onclick="copy_img_url(this)"  src="data:image/<%=item.itemimg.contentType%>;base64,<%=item.itemimg.data.toString('base64')%>" alt="">
+                    <p style="text-align: center;font-weight:800;"><%= item.itemtitle %></p>
+               </div>
+           <% }) %>
+           <% if(More.length > 35) { %>
+            <div class="more_design_container_child">  
+                <a  href="/MoreDesigns/<%= Result.name %>">View More</a>
+            </div>
+            <% } %>
+       <% }%>
+   </div>
+   <div class="zoom_image_container" id="zoom_img_cont">
+        <div class="zoom_image_inner_box">
+            <img  id="zoomed_image" alt="">
+        </div>
+        <button id="close_zoomed_image" onclick="close_tab()" type="button">&times;</button>
+    </div>
+

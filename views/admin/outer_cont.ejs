@@ -1,0 +1,90 @@
+<div class="cat_designs_containers" id="outer_cont" style="display:none">
+    <div class="show trending_designs_" id="outer2_Trending_Designs">
+        <!-- <button class="adddesigns" onclick="document.getElementById('trending_design_form').style.display = 'block'">Add -->
+            Image</button>
+        <h1>Outer Trending Designs</h1>
+        <% if(OuterTrending !=null) { %>
+            <% OuterTrending.reverse().forEach(function(item){ %>
+                <div class="trending_designs_child">
+
+                    <% if(item.itemimg==null) {%>
+                        <img src="\static\blouseimages\images.jpg" alt="">
+                        <% } else {%>
+                            <div class="trending_designs_image_box">
+                                <a onclick="Deletion_confirmation(event,this)"
+                                    href="/Outer/delete/trending/<%= OuterResult._id %>/<%= item._id %>"><i
+                                        class="material-icons">delete</i></a>
+                                <img src="data:image/<%=item.itemimg.contentType%>;base64,<%=item.itemimg.data.toString('base64')%>"
+                                    alt="">
+                            </div>
+                            <% } %>
+                                <div class="trending_designs_title_box">
+                                    <h5>
+                                        <%= item.itemtitle %>
+                                    </h5>
+
+                                </div>
+                </div>
+                <% }) %>
+                    <% } %>
+
+
+
+    </div>
+    <div class="hide trending_designs_" id="outer2_More_Designs">
+        <!-- <button class="adddesigns" onclick="document.getElementById('more_design_form').style.display = 'block'">Add -->
+            Image</button>
+        <h1>Outer More Designs</h1>
+        <% if(OuterMore !=null) { %>
+            <% OuterMore.reverse().forEach(function(item){ %>
+                <div class="trending_designs_child">
+                    <% if(item.itemimg==null) {%>
+                        <img src="\static\blouseimages\images.jpg" alt="">
+                        <% } else {%>
+                            <div class="trending_designs_image_box">
+                                <a onclick="Deletion_confirmation(event,this)"
+                                    href="/Outer/delete/more/<%= OuterResult._id %>/<%= item._id %>"><i
+                                        class="material-icons">delete</i></a>
+                                <img src="data:image/<%=item.itemimg.contentType%>;base64,<%=item.itemimg.data.toString('base64')%>"
+                                    alt="">
+                            </div>
+                            <% } %>
+                                <div class="trending_designs_title_box">
+                                    <h5>
+                                        <%= item.itemtitle %>
+                                    </h5>
+
+                                </div>
+                </div>
+                <% }) %>
+                    <% } %>
+
+    </div>
+
+
+    
+    <div class="hide trending_designs_"  id="outer2_Slides_Designs" >
+        <!-- <button class="adddesigns" onclick="document.getElementById('slides_design_form').style.display = 'block'">Add Image</button> -->
+        <h1>Outer Slides</h1>
+        <% if(OuterSlides != null) { %>
+            <% OuterSlides.reverse().forEach(function(item){ %>
+                <div class="trending_designs_child">
+                 
+                    <% if(item.itemimg == null) {%>
+                        <img  src="\static\blouseimages\images.jpg" alt="">
+                    <% } else {%>
+                        <div class="trending_designs_image_box">
+                            <a onclick="Deletion_confirmation(event,this)" href="/Outer/delete/slides/<%= OuterResult._id %>/<%= item._id %>"><i class="material-icons">delete</i></a>  
+                            <img src="data:image/<%=item.itemimg.contentType%>;base64,<%=item.itemimg.data.toString('base64')%>" alt="">
+                        </div>
+                    <% } %>
+                    
+                </div>
+            <% }) %>
+        <% } %>  
+
+
+    </div>
+
+
+</div>

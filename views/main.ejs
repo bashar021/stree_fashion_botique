@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Stree Fashion</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="Ladies boutique">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0&display=swap" onload="this.rel='stylesheet'"/>
+    <link rel="preload" as="image" href="/static/posters/mainposter.jpg">
+    <link rel="preload stylesheet" href="/static/CSS/main.css" as="style" type="text/css" crossorigin="anonymous">
+    <style>
+        body {margin: 0px;padding: 0px;background-color: rgba(217, 233, 239, 0.353)}
+    </style>
+</head>
+<body>
+    <div id="contact-bg-div" class="animate">
+        <button style="float: right;margin:2% 2% ;background-color: transparent;color: white;border-style: none;font-size: 50px;" onclick="document.getElementById('contact-bg-div').style.display='none'">&times</button>
+        <div id="pop-form-container">
+            <h1>Contact Us</h1>
+            <p style="margin-right: 2.5%;margin-left:2.5%;">OPP Police Chowki, Masjid Gali,Near College Road, Vikasnagar,Dehradun(U.K)</p>
+            <a href="https://wa.me/7500603701?text=Hi%27"  target="_blank" style="color:red;font-size: 40px;margin-left: 4%;margin-right: 0px;text-decoration: none;font-size: 20px;">Click here for Whastapp</a><br>
+            <a href="mailto:streefashion59@gmail.com" style="margin-bottom: 10vh;">streefashion59@gmail.com</a><br>
+            <p style="padding-bottom:5vh"><a href="tel:7500603701" >7500603701</a></p>
+        </div>
+    </div>
+    <div class="mainpostercontainer">
+        <div>
+            <div class="navigationbar">
+                <ul id="navelment">
+                    <!-- <li class="newcontactbt" style="background-color: rgba(0, 0, 0, 0.333);padding: 1% 0.1% 1% 0.1% ;border-radius: 8%;" ><a  style="color: rgb(231, 225, 225);">Contact</a></li> -->
+                    <!-- <li style="background-color: rgba(0, 0, 0, 0.333);padding: 1%;border-radius: 10%;">Contact</li> -->
+                    
+                    <li><a href="/Blouse">Blouse</a></li>
+                   
+                    <li><a href="/Suit">Suit</a></li>
+                    <li><a href="/Traditional">Traditional</a></li>
+                    <li><a href="/western">Western</a></li>
+                    <button class="newcontactbt" onclick="document.getElementById('contact-bg-div').style.display='block'">Contact</button>
+                </ul>
+            </div>
+            <!-- <img  class="logo-image" src="" alt=""> -->
+            <!-- <div style="position: absolute;">
+                <h1 class="shopname stree">स्त्री</h1>
+                <h1 class="shopname fashion">Fashion</h1>
+                <h1 class="shopname boutique">Boutique</h1>
+            </div> -->
+            <!-- <div class="about-container">
+                <h1>A Perfect Combination of Traditional and Modern Era</h1>
+                <p>Stree Fashion Boutique provides all the service of stiching all kind of ladies dresses and also we make a custom designs of dress acording to the customer</p>
+                <button onclick="document.getElementById('contact-bg-div').style.display='block'">Contact</button>
+            </div> -->
+        </div>
+    </div>
+    <div class="services-container">
+        <h1>Our Services</h1>
+        <div class="semicircle-container">
+            <div class="semicircle-up-part">
+                <img rel="preload" src="data:image/<%= HomeResult.wedding.itemimg.contentType%>;base64,<%= HomeResult.wedding.itemimg.data.toString('base64')%>" alt="wedding-service">
+            </div>
+            <div class="semicircle-dwon-part">
+                <h3 >Weddings</h3>
+                <p class="hide_mobile_view">Lehnga,Gown,Suit,Stitched Saree,Fusion-Outfits,Blouse,Lancha</p>
+                <p class="open_mobile_view">Lehnga,Gown,Suit, <br> Fusion-Outfits,Lancha, <br> Blouse</p>
+            </div>
+        </div>
+        <div class="semicircle-container">
+            <div class="second-semicircle-up-part">
+                <img rel="preload" src="data:image/<%= HomeResult.western.itemimg.contentType%>;base64,<%= HomeResult.western.itemimg.data.toString('base64')%>" alt="traditional-service">
+            </div>
+            <div class="second-semicircle-dwon-part">
+                <h3>Western</h3>
+                <p >Indo-Western Suits,Tops,Sharag,Skirt, <br> Jumpsuits</p>
+                <!-- <p class="open_mobile_view">Indo-Western Suits,Tops,Sharag,Skirt, <br> Jumpsuits</p> -->
+            </div>
+        </div>
+        <div class="semicircle-container">
+            <div class="semicircle-up-part">
+                <img rel="preload"  src="data:image/<%= HomeResult.traditional.itemimg.contentType%>;base64,<%= HomeResult.traditional.itemimg.data.toString('base64')%>" alt="wedding-service">
+            </div>
+            <div class="semicircle-dwon-part">
+                <h3>Traditional</h3>
+                <p class="hide_mobile_view" >Salwar kameez,Kurti,Anarkali Suit,Sharara-Garara,Women’s Sherwani,Paplun</p>
+                <p class="open_mobile_view">Salwar kameez,Kurti, <br> Anarkali Suit,Sharara-Garara,Paplun</p>
+            </div>
+        </div>
+    </div>
+    <div class="mainfrontboxes" style="background-color:rgb(234 221 212 / 29%);">
+        <% LehngaTrending.slice(0,1).forEach(function(item){ %>
+            <div style="display: flex;">
+                <div class="mainfrontboxes_img_container">
+                    <img src="data:image/<%= item.itemimg.contentType%>;base64,<%= item.itemimg.data.toString('base64')%>"
+                        alt="err" class="frontboximg">
+                </div>
+                <div class="mainfrontboxes-discription-box">
+                    <h1 class="mfbtitle">Lehnga</h1>
+                    <p class="mfbtdicription">We make all types of Lehnga designs for wedding purpose like-<br>Lehnga with jacket,
+                        Cropped Lehenga, Multi-layers Lehenga,
+                        <br>Lehenga with long heavy jacket,<br>Ruffle or layered lehenga</p>
+                        <button class="mfbtn" onclick="location.href='/lehnga'">View Designs</button>
+                </div>
+            </div>
+            <% }) %>
+    </div>
+    <div class="mainfrontboxes" style="background-color:rgb(192 213 220 / 84%);">
+        <% PaplunTrending.slice(0,1).forEach(function(item){ %>
+            <div style="display: flex;">
+                <div class="mainfrontboxes-discription-box">
+                    <h1 class="mfbtitle">Peplum</h1>
+                    <p class="mfbtdicription">All types of Paplun dreses Like -  Boat Neck Peplum,<br>Peplum blouse,
+                        Peplum top,Peplum kurti,Lehnga peplum,
+                        <br>Peplum with sharara </p>
+                    <button class="mfbtn" onclick="location.href='/paplun'">View Designs</button>
+                </div>
+                <div class="mainfrontboxes_img_container" style="margin-right: 5%;">
+                    <img src="data:image/<%= item.itemimg.contentType%>;base64,<%= item.itemimg.data.toString('base64')%>"
+                        alt="err" class="frontboximg">
+                </div>
+            </div>
+            <% }) %>
+    </div>
+    <div class="mainfrontboxes" style="background-color:rgb(217 217 235 / 37%);">
+        <div style="display: flex;">
+            <div class="mainfrontboxes_img_container">
+                <img src="/static/images/imageicon.webp" alt="err" class="frontboximg">
+            </div>
+            <div class="mainfrontboxes-discription-box">
+                <h1 class="mfbtitle">Gown</h1>
+                <p class="mfbtdicription">Jacket gown, Ball gown, Mermaid gown,Ruffle gown,<br>Of shoulder gown,
+                    Spaghetti-strap gown,
+                    <br>A line gown, Indo western gown,<br>Slit gown, Cape gown </p>
+                <button class="mfbtn">View Designs</button>
+            </div>
+        </div>
+    </div>
+    <div id="scrollcntcat">
+        <% DataArray.forEach(function(item){ %>
+            <div class="scrollboxes" onclick="location.href='/<%-item.name%>'">
+                <% item.trending.reverse().slice(0,1).forEach(function(trendimg){%>
+                    <div class="scrollboxes-inner-box">
+                        <img  src="data:image/<%= trendimg.itemimg.contentType%>;base64,<%= trendimg.itemimg.data.toString('base64')%>" alt="">
+                    </div>
+                    <% }) %>
+                        <h3 class="fronthbtitle">
+                            <%- item.name %>
+                        </h3>
+            </div>
+            <% }) %>
+    </div>
+    <div class="kidscontainer">
+        <div class="about-kids">
+            <h1 class="about-kidskids">Lets</h1>
+            <h1 class="about-kidsthe">There Future Be Stylish</h1>
+            <p>We also make all the types of traditional, western and wedding dresses of kids.</p>
+            <button id="kids_button"><a style="text-decoration: none;color:white" href="/Kids">View Designs</a></button>
+        </div>
+        <div class="kids-vertical-line">
+        </div>
+        <% KidsTrending.reverse().slice(0,1).forEach(function(item){ %>
+            <div class="kidssemicircle">
+                <img src="data:image/<%= item.itemimg.contentType%>;base64,<%= item.itemimg.data.toString('base64')%>"
+                    alt="">
+            </div>
+            <% }) %>
+    </div>
+    <hr style="width: 40%;margin-bottom: 2%;margin-top: 2%;">
+    <footer>
+        <div class="footer_container" >
+            <div class="footer_container_child" >
+                <h1 >Contact Information</h1>
+                <p class="footerctinfodetail"> <span style="margin-right: 3%;"><i
+                            class="material-symbols-outlined footerctinfoicons">pin_drop</i></span>Opp. Police Chowki, Masjid Gali,Near
+                    College Road,Vikasnagar,Dehradun(U.K)</p>
+                <p class="footerctinfodetail"> <span style="margin-right: 3%;"><i class="material-symbols-outlined footerctinfoicons">call</i></span>7500603701</p>
+                <p class="footerctinfodetail" style="margin-bottom: 2%;"> <span style="margin-right: 3%;"><i class="material-symbols-outlined footerctinfoicons">mail</i></span>streefashion59@gmail.com</p>
+            </div>
+            <div class="footerfeedbackform">
+                <h1>Feedback</h1>
+                <!-- <form  method="post" > -->
+                    <input type="text" name="name" id="name" placeholder="Name">
+                    <input  type="email" name="email" id="email" placeholder="Email"><br>
+                    <textarea id="footerfeedbackmssg " style="margin-top: 5%;" name="feedbackmessage" id=""
+                        rows="5" placeholder="Message"></textarea><br>
+                    <button id="footerfdbt" onclick="alert('submited')"  type="submit">submit</button>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

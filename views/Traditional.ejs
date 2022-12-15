@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Stree Fashion</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+    <link rel="stylesheet" href="/static/CSS/Blouse.css">
+</head>
+<body>
+    <div class="nav-container">
+        <Button id="nav-home-bt" ><a style="color: black;"  href="/">Home</a></Button>
+    </div>
+<div style="position: relative;padding-top: 0%;margin-top: 3vw;">
+    <div id="T-D-title-C" >
+        <div id="T-D-left-box" >
+        </div>
+        <div id="T-D-middle-box" >
+            <h2>Lehnga Design</h2>  
+        </div>
+        <div id="T-d-right-box">
+        </div>
+    </div>
+    <div class="more-designs-container" style="margin-top: 0.5%;">
+        <!-- more designs inner containers  -->
+        <% if(LehngaMore != null) { %>
+            <% LehngaMore.forEach(function(item){ %>
+                <div  class="M-D-inner-containers" >
+                    <img onclick="copy_img_url(this)"  src="data:image/<%=item.itemimg.contentType%>;base64,<%=item.itemimg.data.toString('base64')%>" alt="">
+                    <!-- <div class="TDBB-ID">
+                       
+                    </div> -->
+                    <h4 class="font" style="text-align: center;margin:5%" ><%= item.itemtitle %></h4>
+                </div>
+            <% }) %>
+        <% }%>
+    </div>
+</div>
+<div style="position: relative;padding-top: 0%;margin-top: 3vw;">
+    <div id="T-D-title-C" >
+        <div id="T-D-left-box" >
+        </div>
+        <div id="T-D-middle-box" >
+            <h2>Suit Designs</h2>  
+        </div>
+        <div id="T-d-right-box">
+        </div>
+    </div>
+    <div class="more-designs-container" style="margin-top: 0.5%;">
+        <!-- more designs inner containers  -->
+        <% if(SuitMore != null) { %>
+            <% SuitMore.forEach(function(item){ %>
+                <div  class="M-D-inner-containers" >
+                    <img onclick="copy_img_url(this)"  src="data:image/<%=item.itemimg.contentType%>;base64,<%=item.itemimg.data.toString('base64')%>" alt="">
+                    <h4 class="font" style="text-align: center;margin:5%" ><%= item.itemtitle %></h4>
+                </div>
+            <% }) %>
+        <% }%>
+    </div>
+</div>
+<div style="position: relative;padding-top: 0%;margin-top: 3vw;">
+    <div id="T-D-title-C" >
+        <div id="T-D-left-box" >
+        </div>
+        <div id="T-D-middle-box" >
+            <h2>Paplun Design</h2>  
+        </div>
+        <div id="T-d-right-box">
+        </div>
+    </div>
+    <div class="more-designs-container" style="margin-top: 0.5%;">
+        <!-- more designs inner containers  -->
+        <% if(PaplunMore != null) { %>
+            <% PaplunMore.forEach(function(item){ %>
+                <div  class="M-D-inner-containers" >
+                    <img onclick="copy_img_url(this)"  src="data:image/<%=item.itemimg.contentType%>;base64,<%=item.itemimg.data.toString('base64')%>" alt="">
+                    <h4 class="font" style="text-align: center;margin:5%" ><%= item.itemtitle %></h4>
+                </div>
+            <% }) %>
+        <% }%>
+    </div>
+</div>
+<div style="position: relative;padding-top: 0%;margin-top: 3vw;">
+    <div id="T-D-title-C" >
+        <div id="T-D-left-box" >
+        </div>
+        <div id="T-D-middle-box" >
+            <h2>Bottom Design</h2>  
+        </div>
+        <div id="T-d-right-box">
+        </div>
+    </div>
+    <div class="more-designs-container" style="margin-top: 0.5%;">
+        <!-- more designs inner containers  -->
+        <% if(BottomdesignsMore != null) { %>
+            <% BottomdesignsMore.forEach(function(item){ %>
+                <div  class="M-D-inner-containers" >
+                    <img onclick="copy_img_url(this)"  src="data:image/<%=item.itemimg.contentType%>;base64,<%=item.itemimg.data.toString('base64')%>" alt="">
+                    <h4 class="font" style="text-align: center;margin:5%" ><%= item.itemtitle %></h4>
+                </div>
+            <% }) %>
+        <% }%>
+    </div>
+</div>
+<div style="position: relative;padding-top: 0%;margin-top: 3vw;">
+    <div id="T-D-title-C" >
+        <div id="T-D-left-box" >
+        </div>
+        <div id="T-D-middle-box" >
+            <h2>Neck Design</h2>  
+        </div>
+        <div id="T-d-right-box">
+        </div>
+    </div>
+    <div class="more-designs-container" style="margin-top: 0.5%;">
+        <!-- more designs inner containers  -->
+        <% if(NeckdesignsMore != null) { %>
+            <% NeckdesignsMore.forEach(function(item){ %>
+                <div  class="M-D-inner-containers" >
+                    <img onclick="copy_img_url(this)"  src="data:image/<%=item.itemimg.contentType%>;base64,<%=item.itemimg.data.toString('base64')%>" alt="">
+                    <h4 class="font" style="text-align: center;margin:5%" ><%= item.itemtitle %></h4>
+                </div>
+            <% }) %>
+        <% }%>
+    </div>
+</div>
+<div style="position: relative;padding-top: 0%;margin-top: 3vw;">
+    <div id="T-D-title-C" >
+        <div id="T-D-left-box" >
+        </div>
+        <div id="T-D-middle-box" >
+            <h2>Sleeves Design</h2>  
+        </div>
+        <div id="T-d-right-box">
+        </div>
+    </div>
+    <div class="more-designs-container" style="margin-top: 0.5%;">
+        <!-- more designs inner containers  -->
+        <% if(SleevesMore != null) { %>
+            <% SleevesMore.forEach(function(item){ %>
+                <div  class="M-D-inner-containers" >
+                    <img onclick="copy_img_url(this)"  src="data:image/<%=item.itemimg.contentType%>;base64,<%=item.itemimg.data.toString('base64')%>" alt="">
+                    <h4 class="font" style="text-align: center;margin:5%" ><%= item.itemtitle %></h4>
+                </div>
+            <% }) %>
+        <% }%>
+    </div>
+</div>
+<div style="position: relative;padding-top: 0%;margin-top: 3vw;">
+    <div id="T-D-title-C" >
+        <div id="T-D-left-box" >
+        </div>
+        <div id="T-D-middle-box" >
+            <h2>kurtis Design</h2>  
+        </div>
+        <div id="T-d-right-box">
+        </div>
+    </div>
+    <div class="more-designs-container" style="margin-top: 0.5%;">
+        <!-- more designs inner containers  -->
+        <% if(KurtisMore != null) { %>
+            <% KurtisMore.forEach(function(item){ %>
+                <div  class="M-D-inner-containers" >
+                    <img onclick="copy_img_url(this)"  src="data:image/<%=item.itemimg.contentType%>;base64,<%=item.itemimg.data.toString('base64')%>" alt="">
+                    <h4 class="font" style="text-align: center;margin:5%" ><%= item.itemtitle %></h4>
+                </div>
+            <% }) %>
+        <% }%>
+    </div>
+</div>
+<div style="position: relative;padding-top: 0%;margin-top: 3vw;">
+    <div id="T-D-title-C" >
+        <div id="T-D-left-box" >
+        </div>
+        <div id="T-D-middle-box" >
+            <h2>Blouse Design</h2>  
+        </div>
+        <div id="T-d-right-box">
+        </div>
+    </div>
+    <div class="more-designs-container" style="margin-top: 0.5%;">
+        <!-- more designs inner containers  -->
+        <% if(BlouseMore != null) { %>
+            <% BlouseMore.forEach(function(item){ %>
+                <div  class="M-D-inner-containers" >
+                    <img onclick="copy_img_url(this)"  src="data:image/<%=item.itemimg.contentType%>;base64,<%=item.itemimg.data.toString('base64')%>" alt="">
+                    <h4 class="font" style="text-align: center;margin:5%" ><%= item.itemtitle %></h4>
+                </div>
+            <% }) %>
+        <% }%>
+    </div>
+</div>
+<div style="position: relative;padding-top: 0%;margin-top: 3vw;">
+    <div id="T-D-title-C" >
+        <div id="T-D-left-box" >
+        </div>
+        <div id="T-D-middle-box" >
+            <h2>Outer Design</h2>  
+        </div>
+        <div id="T-d-right-box">
+        </div>
+    </div>
+    <div class="more-designs-container" style="margin-top: 0.5%;">
+        <!-- more designs inner containers  -->
+        <% if(OuterMore != null) { %>
+            <% OuterMore.forEach(function(item){ %>
+                <div  class="M-D-inner-containers" >
+                    <img onclick="copy_img_url(this)"  src="data:image/<%=item.itemimg.contentType%>;base64,<%=item.itemimg.data.toString('base64')%>" alt="">
+                    <h4 class="font" style="text-align: center;margin:5%" ><%= item.itemtitle %></h4>
+                </div>
+            <% }) %>
+        <% }%>
+    </div>
+</div>
+<%- include('links-footer.ejs') %>
+</body>
+</html>

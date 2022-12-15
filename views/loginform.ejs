@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Admin login</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/static/CSS/loginform.css">
+</head>
+<body>
+    <div class="form_container">
+
+        <h1 >Login</h1>
+        <% if(message.length > 0 ) { %>
+            <div style="background-color:rgb(201, 120, 120);color:rgb(74, 6, 6);width:98%;margin: auto;box-shadow: 5px 5px 5px gray;">
+                <h3 class="font" style="padding: 0.5% 0 0.5% 0;text-align: left;"><%- message %></h3>
+            </div>
+        <% } %>
+        <form action="/admin/login" method="post">
+            <input type="text" name="username" placeholder="Username">
+            <input type="email" name="email" placeholder="Email">
+            <input type="password" name="password" placeholder="Password">
+            <p id="captcha_box" style="background-color: black;width:fit-content;margin-right:auto;margin-left:auto;padding: 0.5% 2% 0.5% 2%;letter-spacing: 5px;font-size: 200%;margin-bottom: 0px;font-style:oblique;color: white;">this</p>
+            <p  style="text-align: center;font-size: x-large;margin-bottom: 1%;color: white;"><i class="fa fa-refresh " id="refresh_icon" onclick="refresh_captcha()"  ></i></p>
+            <input  style="padding-top: 0%;margin-top:1%" id="captcha_input_field" type="text"  placeholder="Enter Captcha Code">
+            <p id="captcha_alert" style="width: fit-content;margin:auto;margin-top: 0.5%;padding: 0.5% 1% 0.5% 1%;color: red;font-size:x-large;"></p>
+            <Button onclick="verify_captcha(event)" type="submit">Submit</Button>
+        </form>
+        <p><a href="/admin/recovery">Forget Password</a></p>
+    </div>
+    <script src="/static/Js/loginform.js">
+    </script>
+</body>
+</html>

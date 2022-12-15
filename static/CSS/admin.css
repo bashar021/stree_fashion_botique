@@ -1,0 +1,78 @@
+body{
+    margin: 0px;background-color: rgb(130, 126, 126);
+}
+.menu_button {
+    margin-top: 1%;
+}
+.menu_button div {
+    width: 30px;height: 3px;background-color: white;margin: 6px 0;margin-left: 2%;
+}
+/* menubar  */
+.sidenav {
+    height: 100%;width: 0;position: fixed;z-index: 1;top: 0;left: 0;background-color: rgba(17, 17, 17, 0.824);overflow-x: hidden;transition: 0.5s;
+}
+.sidenav button {
+    padding: 8px 8px 8px 32px;font-size: 25px;color: white;background-color: transparent;border-style: none;display: block;text-align: center;
+}
+.sidenav a:hover {
+    color: #818181;
+}
+.sidenav button:hover {
+    color: #818181;
+}
+.sidenav .closebtn {
+    position: absolute;top: 0;right: 25px;font-size: 50px;margin-left: 50px;color: #f1f1f1;
+}
+#formbtn{
+    color: white;font-weight: bolder;
+}
+/* container  */
+.adddesigns {
+    width: fit-content;position: absolute;right: 1%;top: 1%;
+}
+.trending_designs_{
+    color: white;
+}
+.trending_designs_ h1{
+    text-align: center;
+}
+.trending_designs_child{
+    background-color: rgba(128, 128, 128, 0.138);margin-bottom: 5%;height: 20vw;display: inline-block;width: 47.6%;margin-left: 0.8%;margin-right: 0.8%;
+}
+.trending_designs_image_box{
+    width: 100%;height: 20vw;position: relative;
+}
+.trending_designs_image_box a{
+    float: bottom;position: absolute;
+
+}
+.trending_designs_image_box a i{
+    color: black;font-size:8vw;transition: 1s;
+}
+.trending_designs_image_box a i:hover{
+    color:  rgba(0, 0, 0, 0.697);
+}
+.trending_designs_image_box img{
+    width: 100%;object-fit: cover;height: 20vw;
+}
+.trending_designs_title_box{
+    background-color: rgba(128, 128, 128, 0.479);width: 100%;
+}
+.trending_designs_title_box h5{
+    font-size: 3vw;text-align:center;margin-top: 0px;
+}
+#blouse_Trending_Designs {
+    display: block;
+}
+#blouse2_More_Designs {
+    display: none;
+}
+.hide {
+    display: none;
+}
+.show {
+    display: block;
+}
+#formbtn{
+    position: absolute;top:0%;right:1%;
+}

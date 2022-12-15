@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Updation</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {background-image: linear-gradient(white, rgb(213, 209, 209), rgb(101, 101, 101));margin: 0px;background-repeat: no-repeat;}
+        #parent_container {width: 100vw;height: 100vh;text-align: center;}
+        #image_upload_form {display: contents;}
+        #main_container {position: absolute;left: 50%;top: 50%;transform: translate(-50%, -50%);
+            background-color: rgba(0, 0, 0, 0.074);padding: 5% 2.5% 5% 2.5%;border-radius: 20%;
+            /* width: 50%; */
+        }
+        #title_name {margin-left: auto;margin-right: auto;}
+        .input_file_box {position: relative;}
+        .input_file {position: absolute;opacity: 1%;left: 0%;top: 0%;bottom: 0%;right: 0%;}
+        .padd{margin-bottom: 3%;}
+       
+        @media screen and (max-device-width: 620px) {
+            #main_container{
+                width: 90%;
+               
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="parent_container">
+        <% if(submited.length > 0 ) { %>
+            <div class="alertbox" style="background-color:rgb(161, 231, 161);width: 95%;margin: auto;border-color:green;position: absolute;left: 50%;top:2%;transform: translate( -50%);">
+                <h3 style="color: green;margin: 0.5%;">Image has uploaded<span class="closebtn" style="float: right;margin-right: 2%;" onclick="this.parentElement.style.display='none';">&times;</span> </h3>
+            </div>
+        <% } %>
+        <% if(canceled.length > 0 ) { %>
+            <div class="alertbox" style="background-color:rgb(220, 168, 168);width: 95%;margin: auto;border-color:red;position: absolute;left: 50%;top:2%;transform: translate( -50%);">
+                <h3 style="color:red;margin: 0.5%;">Image has been not uploaded please try again later <span class="closebtn" style="float: right;margin-right: 2%;" onclick="this.parentElement.style.display='none';">&times;</span> </h3>
+            </div>
+        <% } %>
+        <div id="main_container">
+                <h1>Upload Your Image Here</h1>
+                <h5 id="sizealert" style="color: red;margin: 0 0 1% 0; display: none;">Image size should less then 200 kb</h5>
+                <input class="padd" type="radio" id="home"  onclick="select_updation_type(this)" name="select_updation" value="home">
+                <label  for="home">Home</label>
+                <input class="padd" type="radio" id="products" onclick="select_updation_type(this)"  name="select_updation" value="products" checked>
+                <label for="products">Products</label>
+            <form  id="home_upload_form" onsubmit="verifyimagesize(event,'homeinp')"  style="display: none;" action="/"  method="post" enctype="multipart/form-data" >
+                <input type="radio" id="logo"  onclick="select_type(this)" name="select_updation" value="logo" >
+                <label for="logo">Logo</label>
+                <input  type="radio" id="wedding" onclick="select_type(this)"  name="select_updation" value="wedding" >
+                <label for="wedding">Wedding</label>
+                <input type="radio" id="western" onclick="select_type(this)"  name="select_updation" value="western" >
+                <label for="western">Western</label>
+                <input class="padd" type="radio" id="traditional" onclick="select_type(this)"  name="select_updation" value="traditional" >
+                <label for="traditional">Traditional</label><br>
+                <button class="input_file_box padd" type="button">Upload Image<input class="input_file" onchange="upload_check(this)" type="file" name="img" id="homeinp" formenctype="multipart/form-data" required></button><br>
+                <button style="background-color: red;border-style:none" id="home_upload_btn" type="submit">Submit</button>
+            </form>
+            <form id="image_upload_form" onsubmit="verifyimagesize(event,'productinp')" action="/blouse" method="post" enctype="multipart/form-data">
+                <input class="padd" id="title_name" type="text" name="name" placeholder="Title name"><br>
+                <label for="SlectCatagory">Select Catagory</label>
+                <select class="padd" id="SlectCatagory">
+                    <option value="blouse">Blouse</option>
+                    <option value="bottomdesigns">Bottom</option>
+                    <option value="kids">Kids</option>
+                    <option value="kurtis">Kurti</option>
+                    <option value="lehnga">Lehnga</option>
+                    <option value="neckdesigns">Neck</option>
+                    <option value="outer">Outer</option>
+                    <option value="paplun">Paplun</option>
+                    <option value="skirt">Skirt</option>
+                    <option value="sleeves">Sleeves</option>
+                    <option value="suit">Suit</option>
+                    <option value="top">Top</option>
+                </select><br>
+                <label for="FormType">Form Type</label>
+                <select class="padd" id="FormType">
+                    <option value="">Trending</option>
+                    <option value="-m">More</option>
+                    <option value="-s">Slides</option>
+                </select><br>
+                <button class="input_file_box padd" type="button">Upload Image<input class="input_file" onchange="upload_check(this)" type="file" name="img" id="productinp" formenctype="multipart/form-data" required></button><br>
+                <button id="form_btn" style="background-color: red;border-style:none" type="submit" onclick="formurl()">submit</button>
+            </form>
+        </div>
+    </div>
+    <script src="/static/Js/newform.js"></script>
+</body>
+</html>

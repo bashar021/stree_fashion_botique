@@ -1,0 +1,11 @@
+<div class="cat-posters" >
+    <% Slides = Result.slides%>
+    <% Slides.forEach(function(item) {%>
+        <div class="poster_containers">
+            <img  src="data:image/<%=item.itemimg.contentType%>;base64,<%=item.itemimg.data.toString('base64')%>" >
+        </div>
+    <% })%>
+</div>
+<div id="slide_dots_cont" style="text-align:center">
+    <!-- <span class="dot"></span>  -->
+</div>

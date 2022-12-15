@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Stree Fashion</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/static/CSS/Blouse.css">
+</head>
+<body>
+    <div class="nav-container">
+        <Button id="nav-home-bt" ><a  href="/">Home</a></Button>
+    </div>
+    <div class="more-designs-container" >
+        <!-- more designs inner containers  -->
+        <% if(More != null) { %>
+            <% More.slice(50).forEach(function(item){ %>
+                <div  class="M-D-inner-containers" >
+                    <img onclick="copy_img_url(this)"  src="data:image/<%=item.itemimg.contentType%>;base64,<%=item.itemimg.data.toString('base64')%>" alt="">
+                    <div class="TDBB-ID">
+                        <h4 ><%= item.itemtitle %></h4>
+                    </div>
+                </div>
+            <% }) %>
+        <% }%>
+    </div>
+    <%- include('links-footer.ejs') %>
+</body>
+
+</html>

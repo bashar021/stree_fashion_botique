@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Admin</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <noscript><link rel="https://fonts.googleapis.com/icon?family=Material+Icons" href="https://fonts.googleapis.com/icon?family=Material+Icons"></noscript>  -->
+     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="preload" href="/static/CSS/admin.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="/static/CSS/admin.css" href="/static/CSS/admin.css"></noscript>
+</head>
+<body>
+    <h1 id="id_keep" style="display: none;"></h1>
+    <div class="admincontainer">
+        <%- include('./admin/admin_menubar.ejs')%>
+            <nav class="topnavbar" >
+                    <div onclick="open_menu_bar()" class="menu_button">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                <a href="/admin/upload" id="formbtn"  target="_blank"><span class="material-icons" style="font-size: 250%;">add</span></a>
+            </nav>
+        <% if(notdeleted.length > 0 ) { %>
+            <div class="alertbox" style="background-color:rgb(236, 184, 184);width: 95%;margin: auto;border-color:red;">
+                <h3 style="color:rgba(225, 21, 21, 0.79);margin: 0.5%;margin-left: 2%;padding: 0.5% 0 0.5% 0;">Unabel to delete please try again later <span class="closebtn" style="float: right;margin-right: 2%;font-size: 1.5vw;" onclick="this.parentElement.style.display='none';">&times;</span> </h3>
+            </div>
+        <% } %>
+            <%- include('./admin/blouse_cont.ejs')%>
+                <%- include('./admin/bottomdesigns_cont.ejs')%>
+                    <%- include('./admin/kurtis_cont.ejs')%>
+                        <%- include('./admin/lehnga_cont.ejs')%>
+                            <%- include('./admin/neckdesigns_cont.ejs')%>
+                                <%- include('./admin/outer_cont.ejs')%>
+                                    <%- include('./admin/paplun_cont.ejs')%>
+                                        <%- include('./admin/skirt_cont.ejs')%>
+                                            <%- include('./admin/sleeves_cont.ejs')%>
+                                                <%- include('./admin/suit_cont.ejs')%>
+                                                    <%- include('./admin/top_cont.ejs')%>
+                                                        <%- include('./admin/kids_cont.ejs')%>
+
+    </div>
+    <script  src="/static/Js/admin.js"></script>
+</body>
+
+</html>
